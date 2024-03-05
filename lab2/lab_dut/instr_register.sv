@@ -15,7 +15,8 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
  input  opcode_t       opcode,
  input  address_t      write_pointer,
  input  address_t      read_pointer,
- output instruction_t  instruction_word
+ output instruction_t  instruction_word,
+ output operand_t      rezultat
 );
 
   timeunit 1ns/1ns;
@@ -29,7 +30,17 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
         iw_reg[i] = '{opc:ZERO,default:0};  // reset to all zeros
     end
     else if (load_en) begin
-      iw_reg[write_pointer] = '{opcode,operand_a,operand_b};
+    case(opcode)
+  	  ZERO: rezultat = 0;
+      PASSA: rezultat = operand_a;
+      PASSB: rezultat = operand_b;
+      ADD: rezultat = operand_a + operand_b;
+      SUB: rezultat = operand_a - operand_b;
+      MULT: rezultat = operand_a * operand_b;
+      DIV: rezultat = operand_a / operand_b;
+      MOD: rezultat = operand_a % operand_b;
+    endcase
+      iw_reg[write_pointer] = '{opcode,operand_a,operand_b,rezultat};
     end
 
   // read from the register
