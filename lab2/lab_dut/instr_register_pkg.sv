@@ -17,7 +17,8 @@ package instr_register_pkg;   //se declara pagkage
     MOD
   } opcode_t;
 //operatii matematice ale dut-ului(un fel de calculator)
-  typedef logic signed [31:0] operand_t;  //cu semn, pe 32 biti
+  typedef logic signed [31:0] operand_t; 
+  typedef logic signed [63:0] operand_d;//cu semn, pe 32 biti
   
   typedef logic [4:0] address_t;  //daca nu se specifica signed, va fi unsigned
   
@@ -25,7 +26,7 @@ package instr_register_pkg;   //se declara pagkage
     opcode_t  opc;
     operand_t op_a;
     operand_t op_b;
-    operand_t rezultat;
+    operand_d rezultat;
   } instruction_t;
 
 endpackage: instr_register_pkg

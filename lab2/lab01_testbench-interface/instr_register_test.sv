@@ -20,6 +20,11 @@ module instr_register_test
 
   timeunit 1ns/1ns;
 
+  parameter WRITE_NR = 20;
+  parameter READ_NR = 20;
+
+  instruction_t  iw_reg_test [0:31];
+
   int seed = 555;
 
   initial begin
@@ -39,7 +44,8 @@ module instr_register_test
 
     $display("\nWriting values to register stack...");
     @(posedge clk) load_en = 1'b1;  // enable writing to register
-    repeat (3) begin
+    //repeat (3) begin          MODIFICARE lab3
+    repeat (WRITE_NR) begin
       @(posedge clk) randomize_transaction;
       @(negedge clk) print_transaction;
     end
@@ -47,12 +53,14 @@ module instr_register_test
 
     // read back and display same three register locations
     $display("\nReading back the same register locations written...");
-    for (int i=0; i<=2; i++) begin
+    //for (int i=0; i<=2; i++) begin            MODIFICARE LAB3
+    for (int i=0; i<=READ_NR; i++) begin
       // later labs will replace this loop with iterating through a
       // scoreboard to determine which addresses were written and
       // the expected values to be read back
       @(posedge clk) read_pointer = i;
       @(negedge clk) print_results;
+      check_result;
     end
 
     @(posedge clk) ;
@@ -72,11 +80,12 @@ module instr_register_test
     // addresses of 0, 1 and 2.  This will be replaceed with randomizeed
     // write_pointer values in a later lab
     //
-    static int temp = 0;
+    static int temp = 0;//ramane cu valoarea data initial 0
     operand_a     <= $random(seed)%16;                 // between -15 and 15
     operand_b     <= $unsigned($random)%16;            // between 0 and 15
     opcode        <= opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
-    write_pointer <= temp++;
+    write_pointer <= temp++; //intai se asigneaza, apoi se incrementeaza
+    iw_reg_test[write_pointer] = '{opcode,operand_a,operand_b};
   endfunction: randomize_transaction
 
   function void print_transaction;
@@ -91,6 +100,33 @@ module instr_register_test
     $display("  opcode = %0d (%s)", instruction_word.opc, instruction_word.opc.name);
     $display("  operand_a = %0d",   instruction_word.op_a);
     $display("  operand_b = %0d\n", instruction_word.op_b);
+    $display("  rezultat = %0d\n", instruction_word.rezultat);
   endfunction: print_results
+
+  function void check_result;
+
+   operand_d rezultatul;
+  
+    case(iw_reg_test[read_pointer].opc)
+  	    ZERO: rezultatul = 0;
+        PASSA: rezultatul = iw_reg_test[read_pointer].op_a;
+        PASSB: rezultatul = iw_reg_test[read_pointer].op_b;
+        ADD: rezultatul = iw_reg_test[read_pointer].op_a + iw_reg_test[read_pointer].op_b;
+        SUB: rezultatul = iw_reg_test[read_pointer].op_a - iw_reg_test[read_pointer].op_b;
+        MULT: rezultatul = iw_reg_test[read_pointer].op_a * iw_reg_test[read_pointer].op_b;
+        DIV:if(iw_reg_test[read_pointer].op_b == 0)
+            rezultatul = 0;
+              else
+            rezultatul = iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b;
+        MOD: rezultatul = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
+    endcase
+
+    if(rezultatul === instruction_word.rezultat)
+        $display("Rezultatul este corect");
+        else
+        $display("Rezultatul este gresit");
+
+  endfunction: check_result
+
 
 endmodule: instr_register_test

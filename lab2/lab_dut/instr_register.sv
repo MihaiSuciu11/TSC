@@ -16,7 +16,7 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
  input  address_t      write_pointer,
  input  address_t      read_pointer,
  output instruction_t  instruction_word,
- output operand_t      rezultat
+ output operand_d      rezultat
 );
 
   timeunit 1ns/1ns;
