@@ -73,19 +73,31 @@ module instr_register_test
   end
 
   function void randomize_transaction;
+  operand_t op_a;
+  operand_t op_b;
+  opcode_t  opc;
+  int writepointer;
+  
+  static int temp = 0; //nu se aloca decat o singura data variabila pentru 'static'
+  
+  op_a = $random(seed)%16; // between -15 and 15. Algoritmul de randomize vine cu verilog-ul. Se iau valori intre 15 si -15 deoarece este signed
+  op_b = $unsigned($random)%16;  // between 0 and 15
+  opc = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+  //cast converteste tipul de variabila. 
+  //se face %8 deoarece sunt 8 operatii
+  writepointer = temp++;
+  
     // A later lab will replace this function with SystemVerilog
     // constrained random values
     //
     // The stactic temp variable is required in order to write to fixed
     // addresses of 0, 1 and 2.  This will be replaceed with randomizeed
     // write_pointer values in a later lab
-    //
-    static int temp = 0;//ramane cu valoarea data initial 0
-    operand_a     <= $random(seed)%16;                 // between -15 and 15
-    operand_b     <= $unsigned($random)%16;            // between 0 and 15
-    opcode        <= opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
-    write_pointer <= temp++; //intai se asigneaza, apoi se incrementeaza
-    iw_reg_test[write_pointer] = '{opcode,operand_a,operand_b};
+    operand_a     <= op_a;                 
+    operand_b     <= op_b;          
+    opcode        <= opc; 
+    write_pointer <= writepointer; //temp++ se incrementeaza (creste valoarea cu 1). primeste 0 deoarece ++ este dupa 'temp'
+    iw_reg_test[writepointer] = '{opc,op_a,op_b,0};
   endfunction: randomize_transaction
 
   function void print_transaction;
@@ -105,26 +117,31 @@ module instr_register_test
 
   function void check_result;
 
-   operand_d rezultatul;
-  
+  operand_d res;
     case(iw_reg_test[read_pointer].opc)
-  	    ZERO: rezultatul = 0;
-        PASSA: rezultatul = iw_reg_test[read_pointer].op_a;
-        PASSB: rezultatul = iw_reg_test[read_pointer].op_b;
-        ADD: rezultatul = iw_reg_test[read_pointer].op_a + iw_reg_test[read_pointer].op_b;
-        SUB: rezultatul = iw_reg_test[read_pointer].op_a - iw_reg_test[read_pointer].op_b;
-        MULT: rezultatul = iw_reg_test[read_pointer].op_a * iw_reg_test[read_pointer].op_b;
-        DIV:if(iw_reg_test[read_pointer].op_b == 0)
-            rezultatul = 0;
-              else
-            rezultatul = iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b;
-        MOD: rezultatul = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
+        ZERO: res = 0;
+        PASSA: res = iw_reg_test[read_pointer].op_a;
+        PASSB: res = iw_reg_test[read_pointer].op_b;
+        ADD: res = iw_reg_test[read_pointer].op_a + iw_reg_test[read_pointer].op_b;
+        SUB: res = iw_reg_test[read_pointer].op_a - iw_reg_test[read_pointer].op_b;
+        MULT: res = iw_reg_test[read_pointer].op_a * iw_reg_test[read_pointer].op_b;
+        DIV: begin
+          if (iw_reg_test[read_pointer].op_b === 0) res = 0;
+          else res = iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b;
+        end
+        MOD: res = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
+        default : res = 0;
     endcase
-
-    if(rezultatul === instruction_word.rezultat)
-        $display("Rezultatul este corect");
-        else
-        $display("Rezultatul este gresit");
+    if (res !== instruction_word.rezultat) begin
+      $display("Valorile nu sunt aceleasi");
+      $display("  Expected: %0d", instruction_word.rezultat);
+      $display("  Read: %0d", res);
+    end
+    else begin
+      $display("Valoare citita neasteptata");
+      $display("  Expected: %0d", instruction_word.rezultat);
+      $display("  Read: %0d", res);
+    end
 
   endfunction: check_result
 
