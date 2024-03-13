@@ -11,84 +11,84 @@ Z0 dC:/Users/m1kee/Desktop/fuckultate/tsc/lab2
 vinstr_register
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
 Z2 DXx4 work 18 instr_register_pkg 0 22 _CGU7k1LcFGKkFkE9efz11
-Z3 !s110 1710263115
+!s110 1710313014
 !i10b 1
 !s100 6N:2Y<D^8J10m=9RK17Sb1
 Imj?zA1_`7PhmTQjZ]4KaH2
-Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 instr_register_sv_unit
 S1
 R0
-Z5 w1709705761
+Z4 w1709705761
 8C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab_dut/instr_register.sv
 FC:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab_dut/instr_register.sv
 L0 8
-Z6 OV;L;10.5b;63
+Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1710263115.000000
+!s108 1710313014.000000
 !s107 C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab_dut/instr_register.sv|
 !s90 -reportprogress|300|-work|work|C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab_dut/instr_register.sv|
 !i113 1
-Z7 o-work work
-Z8 tCvgOpt 0
+Z6 o-work work
+Z7 tCvgOpt 0
 Xinstr_register_pkg
 R1
-R3
+!s110 1710313013
 !i10b 1
 !s100 F^dAIVTEiB=jKNQX]z?Li1
 I_CGU7k1LcFGKkFkE9efz11
 V_CGU7k1LcFGKkFkE9efz11
 S1
 R0
-R5
+R4
 8C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab_dut/instr_register_pkg.sv
 FC:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab_dut/instr_register_pkg.sv
 L0 6
-R6
+R5
 r1
 !s85 0
 31
-!s108 1710263114.000000
+!s108 1710313013.000000
 !s107 C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab_dut/instr_register_pkg.sv|
 !s90 -reportprogress|300|-work|work|C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab_dut/instr_register_pkg.sv|
 !i113 1
+R6
 R7
-R8
 vinstr_register_test
 R1
 R2
-!s110 1710263201
+!s110 1710315332
 !i10b 1
-!s100 m5PnEe^5@RMeKM;3i1Z5o0
-IH:JQ;R4@zP>fe58X[IPWF0
-R4
+!s100 D_JJM3`agcgZLd9]EY^MU0
+IMAUSORQNgOai4PWzV[=5F2
+R3
 !s105 instr_register_test_sv_unit
 S1
 R0
-w1710263195
+w1710315324
 8C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab01_testbench-interface/instr_register_test.sv
 FC:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab01_testbench-interface/instr_register_test.sv
 L0 8
-R6
+R5
 r1
 !s85 0
 31
-!s108 1710263201.000000
+!s108 1710315332.000000
 !s107 C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab01_testbench-interface/instr_register_test.sv|
 !s90 -reportprogress|300|-work|work|C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab01_testbench-interface/instr_register_test.sv|
 !i113 1
+R6
 R7
-R8
 vtop
 R1
 R2
-!s110 1710263203
+!s110 1710313025
 !i10b 1
 !s100 3KDE1J^a2B_hRE]1OIIo]3
 ISYi1GgB0geSY0PAO3=M]B0
-R4
+R3
 !s105 top_sv_unit
 S1
 R0
@@ -96,13 +96,13 @@ w1709652915
 8C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab01_testbench-interface/top.sv
 FC:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab01_testbench-interface/top.sv
 L0 5
-R6
+R5
 r1
 !s85 0
 31
-!s108 1710263203.000000
+!s108 1710313025.000000
 !s107 C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab01_testbench-interface/top.sv|
 !s90 -reportprogress|300|-work|work|C:/Users/m1kee/Desktop/fuckultate/tsc/lab2/lab01_testbench-interface/top.sv|
 !i113 1
+R6
 R7
-R8

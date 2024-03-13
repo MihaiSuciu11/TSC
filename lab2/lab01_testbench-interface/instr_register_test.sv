@@ -20,8 +20,10 @@ module instr_register_test
 
   timeunit 1ns/1ns;
 
-  parameter WRITE_NR = 20;
-  parameter READ_NR = 20;
+  parameter WRITE_NR = 4;
+  parameter READ_NR = 4;
+  parameter READ_ORDER = 1; //0-incremental, 1-decremental, 2 random
+  parameter WRITE_ORDER = 1; //0-incremental, 1-decremental, 2 random
 
   instruction_t  iw_reg_test [0:31];
 
@@ -29,7 +31,7 @@ module instr_register_test
 
   initial begin
     $display("\n\n***********************************************************");
-    $display(    "***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***");
+    $display(    "***    THIS IS A SELF-CHECKING TESTBENCH (YET).  YOU    ***");
     $display(    "***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***");
     $display(    "***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***");
     $display(    "***********************************************************");
@@ -65,7 +67,7 @@ module instr_register_test
 
     @(posedge clk) ;
     $display("\n***********************************************************");
-    $display(  "***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***");
+    $display(  "***    THIS IS A SELF-CHECKING TESTBENCH (YET).  YOU    ***");
     $display(  "***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***");
     $display(  "***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***");
     $display(  "***********************************************************\n");
@@ -77,15 +79,23 @@ module instr_register_test
   operand_t op_b;
   opcode_t  opc;
   int writepointer;
-  
-  static int temp = 0; //nu se aloca decat o singura data variabila pentru 'static'
+
+  static int temp_incr = 0;
+  static int temp_decr = 32;
+  static int temp_rand = $unsigned($random)%32;
+      
   
   op_a = $random(seed)%16; // between -15 and 15. Algoritmul de randomize vine cu verilog-ul. Se iau valori intre 15 si -15 deoarece este signed
   op_b = $unsigned($random)%16;  // between 0 and 15
   opc = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
   //cast converteste tipul de variabila. 
   //se face %8 deoarece sunt 8 operatii
-  writepointer = temp++;
+
+  case(WRITE_ORDER)
+  0: writepointer = temp_incr++;
+  1: writepointer = temp_decr--;
+  2: writepointer = temp_rand;
+  endcase
   
     // A later lab will replace this function with SystemVerilog
     // constrained random values
@@ -93,11 +103,14 @@ module instr_register_test
     // The stactic temp variable is required in order to write to fixed
     // addresses of 0, 1 and 2.  This will be replaceed with randomizeed
     // write_pointer values in a later lab
-    operand_a     <= op_a;                 
-    operand_b     <= op_b;          
-    opcode        <= opc; 
-    write_pointer <= writepointer; //temp++ se incrementeaza (creste valoarea cu 1). primeste 0 deoarece ++ este dupa 'temp'
-    iw_reg_test[writepointer] = '{opc,op_a,op_b,0};
+    operand_a     = op_a;                 
+    operand_b     = op_b;          
+    opcode        = opc; 
+    write_pointer = writepointer; //temp++ se incrementeaza (creste valoarea cu 1). primeste 0 deoarece ++ este dupa 'temp'
+
+    $display("Se verifica blocant/neblocant: operand_a = %d, operand_b = %d, opcode = %d, time = %t", operand_a, operand_b, opcode, $time);
+
+    iw_reg_test[writepointer] <= '{opc,op_a,op_b,0};
   endfunction: randomize_transaction
 
   function void print_transaction;
@@ -133,14 +146,14 @@ module instr_register_test
         default : res = 0;
     endcase
     if (res !== instruction_word.rezultat) begin
-      $display("Valorile nu sunt aceleasi");
-      $display("  Expected: %0d", instruction_word.rezultat);
-      $display("  Read: %0d", res);
+      $display("Valorile nu sunt aceleasi.");
+      $display("Valoare asteptata: %0d", instruction_word.rezultat);
+      $display("Valoare primita: %0d", res);
     end
     else begin
-      $display("Valoare citita neasteptata");
-      $display("  Expected: %0d", instruction_word.rezultat);
-      $display("  Read: %0d", res);
+      $display("Valoarea citita este corecta.");
+      $display("Valoare asteptata: %0d", instruction_word.rezultat);
+      $display("Valoare citita: %0d", res);
     end
 
   endfunction: check_result
