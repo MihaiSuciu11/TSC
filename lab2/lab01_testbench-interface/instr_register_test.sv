@@ -20,10 +20,12 @@ module instr_register_test
 
   timeunit 1ns/1ns;
 
-  parameter WRITE_NR = 4;
-  parameter READ_NR = 4;
+  parameter WRITE_NR = 30;
+  parameter READ_NR = 30;
   parameter READ_ORDER = 1; //0-incremental, 1-decremental, 2 random
   parameter WRITE_ORDER = 1; //0-incremental, 1-decremental, 2 random
+
+  int failcounter = 0;
 
   instruction_t  iw_reg_test [0:31];
 
@@ -60,7 +62,12 @@ module instr_register_test
       // later labs will replace this loop with iterating through a
       // scoreboard to determine which addresses were written and
       // the expected values to be read back
-      @(posedge clk) read_pointer = i;
+      @(posedge clk) case (READ_ORDER)
+        0 : read_pointer = i % 32;
+        1 : read_pointer = 31 - (i % 32);
+        2 : read_pointer = $random($random) % 32;
+      endcase
+
       @(negedge clk) print_results;
       check_result;
     end
@@ -75,26 +82,20 @@ module instr_register_test
   end
 
   function void randomize_transaction;
-  operand_t op_a;
-  operand_t op_b;
-  opcode_t  opc;
-  int writepointer;
-
   static int temp_incr = 0;
-  static int temp_decr = 32;
-  static int temp_rand = $unsigned($random)%32;
+  static int temp_decr = 31;
       
   
-  op_a = $random(seed)%16; // between -15 and 15. Algoritmul de randomize vine cu verilog-ul. Se iau valori intre 15 si -15 deoarece este signed
-  op_b = $unsigned($random)%16;  // between 0 and 15
-  opc = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+  operand_a = $random(seed)%16; // between -15 and 15. Algoritmul de randomize vine cu verilog-ul. Se iau valori intre 15 si -15 deoarece este signed
+  operand_b = $unsigned($random)%16;  // between 0 and 15
+  opcode = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
   //cast converteste tipul de variabila. 
   //se face %8 deoarece sunt 8 operatii
 
-  case(WRITE_ORDER)
-  0: writepointer = temp_incr++;
-  1: writepointer = temp_decr--;
-  2: writepointer = temp_rand;
+  case (WRITE_ORDER)
+      0 : write_pointer = temp_incr++;
+      1 : write_pointer = temp_decr--;
+      2 : write_pointer = $random($random)%32;
   endcase
   
     // A later lab will replace this function with SystemVerilog
@@ -103,14 +104,15 @@ module instr_register_test
     // The stactic temp variable is required in order to write to fixed
     // addresses of 0, 1 and 2.  This will be replaceed with randomizeed
     // write_pointer values in a later lab
-    operand_a     = op_a;                 
-    operand_b     = op_b;          
-    opcode        = opc; 
-    write_pointer = writepointer; //temp++ se incrementeaza (creste valoarea cu 1). primeste 0 deoarece ++ este dupa 'temp'
+    //temp++ se incrementeaza (creste valoarea cu 1). primeste 0 deoarece ++ este dupa 'temp'
 
-    $display("Se verifica blocant/neblocant: operand_a = %d, operand_b = %d, opcode = %d, time = %t", operand_a, operand_b, opcode, $time);
+    //$display("Se verifica blocant/neblocant: operand_a = %d, operand_b = %d, opcode = %d, time = %t", operand_a, operand_b, opcode, $time);
+    $display("At write pointer = %0d:, timp %0t: ", write_pointer, $time);
+    $display("  opcode = %0d", opcode,);
+    $display("  operand_a = %0d",   operand_a);
+    $display("  operand_b = %0d\n", operand_b);
+    iw_reg_test[write_pointer] <= '{opcode,operand_a,operand_b,0};
 
-    iw_reg_test[writepointer] <= '{opc,op_a,op_b,0};
   endfunction: randomize_transaction
 
   function void print_transaction;
@@ -118,6 +120,7 @@ module instr_register_test
     $display("  opcode = %0d (%s)", opcode, opcode.name);
     $display("  operand_a = %0d",   operand_a);
     $display("  operand_b = %0d\n", operand_b);
+    $display("  rezultat = %0d\n", instruction_word.rezultat);
   endfunction: print_transaction
 
   function void print_results;
@@ -126,6 +129,7 @@ module instr_register_test
     $display("  operand_a = %0d",   instruction_word.op_a);
     $display("  operand_b = %0d\n", instruction_word.op_b);
     $display("  rezultat = %0d\n", instruction_word.rezultat);
+    $display("Fail counter: %0d\n", failcounter);
   endfunction: print_results
 
   function void check_result;
@@ -148,12 +152,13 @@ module instr_register_test
     if (res !== instruction_word.rezultat) begin
       $display("Valorile nu sunt aceleasi.");
       $display("Valoare asteptata: %0d", instruction_word.rezultat);
-      $display("Valoare primita: %0d", res);
+      $display("Valoare primita: %0d\n", res);
+      failcounter++;
     end
     else begin
       $display("Valoarea citita este corecta.");
       $display("Valoare asteptata: %0d", instruction_word.rezultat);
-      $display("Valoare citita: %0d", res);
+      $display("Valoare citita: %0d\n", res);
     end
 
   endfunction: check_result
