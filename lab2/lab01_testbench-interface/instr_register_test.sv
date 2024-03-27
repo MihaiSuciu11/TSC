@@ -20,6 +20,10 @@ module instr_register_test
 
   timeunit 1ns/1ns;
 
+  parameter TEST_CASE = "text";
+
+  //fopen("regression", "a");
+
   parameter WRITE_NR = 30;
   parameter READ_NR = 30;
   parameter READ_ORDER = 1; //0-incremental, 1-decremental, 2 random
