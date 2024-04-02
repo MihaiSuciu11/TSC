@@ -20,7 +20,7 @@ module instr_register_test
 
   timeunit 1ns/1ns;
 
-  parameter TEST_CASE = "text";
+  parameter TEST_CASE;
 
   //fopen("regression", "a");
 
@@ -77,6 +77,7 @@ module instr_register_test
     end
 
     @(posedge clk) ;
+    final_report;
     $display("\n***********************************************************");
     $display(  "***    THIS IS A SELF-CHECKING TESTBENCH (YET).  YOU    ***");
     $display(  "***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***");
@@ -166,6 +167,20 @@ module instr_register_test
     end
 
   endfunction: check_result
+
+  function void final_report;
+  int file;
+  file = $fopen("../reports/regression_status.txt", "a");
+  if(failcounter != 0)
+  begin
+    $fdisplay(file, "%s: failed", TEST_CASE);
+  end
+  else
+  begin
+    $fdisplay(file, "%s: passed", TEST_CASE);
+  end
+  $fclose(file);
+  endfunction:final_report
 
 
 endmodule: instr_register_test

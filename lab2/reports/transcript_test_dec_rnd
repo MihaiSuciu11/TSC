@@ -1,0 +1,180 @@
+# 1
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:07:22 on Apr 02,2024
+# vlog -sv -timescale 1ps/1ps -work work -f sources.txt 
+# -- Compiling package instr_register_pkg
+# -- Compiling module instr_register
+# -- Importing package instr_register_pkg
+# -- Compiling module instr_register_test
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 23:07:22 on Apr 02,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GWRITE_ORDER=2 -GWRITE_NR=5 -GTEST_CASE=test_dec_rnd -GREAD_ORDER=1 -GREAD_NR=5 
+# Start time: 23:07:22 on Apr 02,2024
+# ** Warning: (vsim-3015) ../lab01_testbench-interface/top.sv(38): [PCDPC] - Port size (64) does not match connection size (32) for port 'rezultat'. The port definition is at: ../lab_dut/instr_register.sv(19).
+#    Time: 0 ns  Iteration: 0  Instance: /top/dut File: ../lab_dut/instr_register.sv
+# 
+# 
+# ***********************************************************
+# ***    THIS IS A SELF-CHECKING TESTBENCH (YET).  YOU    ***
+# ***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***
+# ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
+# ***********************************************************
+# 
+# Reseting the instruction register...
+# 
+# Writing values to register stack...
+# At write pointer = 11:, timp 36: 
+#   opcode = 1 
+#   operand_a = -12
+#   operand_b = 7
+# 
+# Writing to register location 11: 
+#   opcode = 1 (PASSA)
+#   operand_a = -12
+#   operand_b = 7
+# 
+#   rezultat = 0
+# 
+# At write pointer = 26:, timp 46: 
+#   opcode = 0 
+#   operand_a = -9
+#   operand_b = 1
+# 
+# Writing to register location 26: 
+#   opcode = 0 (ZERO)
+#   operand_a = -9
+#   operand_b = 1
+# 
+#   rezultat = 0
+# 
+# At write pointer = 10:, timp 56: 
+#   opcode = 7 
+#   operand_a = -15
+#   operand_b = 8
+# 
+# Writing to register location 10: 
+#   opcode = 7 (MOD)
+#   operand_a = -15
+#   operand_b = 8
+# 
+#   rezultat = 0
+# 
+# At write pointer = 1:, timp 66: 
+#   opcode = 5 
+#   operand_a = -8
+#   operand_b = 7
+# 
+# Writing to register location 1: 
+#   opcode = 5 (MULT)
+#   operand_a = -8
+#   operand_b = 7
+# 
+#   rezultat = 0
+# 
+# At write pointer = 7:, timp 76: 
+#   opcode = 3 
+#   operand_a = -9
+#   operand_b = 5
+# 
+# Writing to register location 7: 
+#   opcode = 3 (ADD)
+#   operand_a = -9
+#   operand_b = 5
+# 
+#   rezultat = 0
+# 
+# 
+# Reading back the same register locations written...
+# Read from register location 31: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   rezultat = 0
+# 
+# Fail counter: 0
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 0
+# Valoare citita: 0
+# 
+# Read from register location 30: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   rezultat = 0
+# 
+# Fail counter: 0
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 0
+# Valoare citita: 0
+# 
+# Read from register location 29: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   rezultat = 0
+# 
+# Fail counter: 0
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 0
+# Valoare citita: 0
+# 
+# Read from register location 28: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   rezultat = 0
+# 
+# Fail counter: 0
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 0
+# Valoare citita: 0
+# 
+# Read from register location 27: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   rezultat = 0
+# 
+# Fail counter: 0
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 0
+# Valoare citita: 0
+# 
+# Read from register location 26: 
+#   opcode = 0 (ZERO)
+#   operand_a = -9
+#   operand_b = 1
+# 
+#   rezultat = 0
+# 
+# Fail counter: 0
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 0
+# Valoare citita: 0
+# 
+# 
+# ***********************************************************
+# ***    THIS IS A SELF-CHECKING TESTBENCH (YET).  YOU    ***
+# ***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***
+# ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
+# ***********************************************************
+# 
+# ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(86)
+#    Time: 156 ns  Iteration: 1  Instance: /top/test
+# End time: 23:07:22 on Apr 02,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1

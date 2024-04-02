@@ -1,0 +1,9 @@
+test_inc_inc: passed
+test_inc_dec: failed
+test_inc_rnd: failed
+test_dec_inc: passed
+test_dec_dec: passed
+test_dec_rnd: passed
+test_rnd_inc: passed
+test_rnd_dec: passed
+test_rnd_rnd: passed
