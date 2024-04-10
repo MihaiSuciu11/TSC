@@ -26,14 +26,15 @@ module instr_register_test
 
   parameter WRITE_NR = 30;
   parameter READ_NR = 30;
-  parameter READ_ORDER = 1; //0-incremental, 1-decremental, 2 random
-  parameter WRITE_ORDER = 1; //0-incremental, 1-decremental, 2 random
+  parameter READ_ORDER = 2; //0-incremental, 1-decremental, 2 random
+  parameter WRITE_ORDER = 2; //0-incremental, 1-decremental, 2 random
 
   int failcounter = 0;
 
   instruction_t  iw_reg_test [0:31];
 
-  int seed = 555;
+  parameter SEED_VAL = 555;
+  int seed = SEED_VAL;
 
   initial begin
     $display("\n\n***********************************************************");
