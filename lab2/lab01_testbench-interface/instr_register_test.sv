@@ -148,11 +148,13 @@ module instr_register_test
         ADD: res = iw_reg_test[read_pointer].op_a + iw_reg_test[read_pointer].op_b;
         SUB: res = iw_reg_test[read_pointer].op_a - iw_reg_test[read_pointer].op_b;
         MULT: res = iw_reg_test[read_pointer].op_a * iw_reg_test[read_pointer].op_b;
-        DIV: begin
+        DIV:
           if (iw_reg_test[read_pointer].op_b === 0) res = 0;
           else res = iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b;
-        end
         MOD: res = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
+        POW:
+          if (iw_reg_test[read_pointer].op_a === 0) res = 0;
+          else res = iw_reg_test[read_pointer].op_a ** iw_reg_test[read_pointer].op_b;
         default : res = 0;
     endcase
     if (res !== instruction_word.rezultat) begin
@@ -182,6 +184,13 @@ module instr_register_test
   end
   $fclose(file);
   endfunction:final_report
+
+  function void reset_iw_reg_test; //se reseteaza valorile din iw_reg_test
+    for (int i = 0; i < 32; i++)
+    begin
+      iw_reg_test[i] = '{opc:ZERO,default:0};
+    end
+  endfunction:reset_iw_reg_test
 
 
 endmodule: instr_register_test

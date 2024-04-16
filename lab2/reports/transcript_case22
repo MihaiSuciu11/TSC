@@ -1,6 +1,6 @@
 # 1
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:17:15 on Apr 16,2024
+# Start time: 23:17:50 on Apr 16,2024
 # vlog -sv -timescale 1ps/1ps -work work -f sources.txt 
 # -- Compiling package instr_register_pkg
 # -- Compiling module instr_register
@@ -10,10 +10,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 23:17:15 on Apr 16,2024, Elapsed time: 0:00:00
+# End time: 23:17:50 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GWRITE_ORDER=2 -GWRITE_NR=50 -GSEED_VAL=492398 -GTEST_CASE=case2 -GREAD_ORDER=2 -GREAD_NR=32 
-# Start time: 23:17:15 on Apr 16,2024
+# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GWRITE_ORDER=2 -GWRITE_NR=50 -GSEED_VAL=492398 -GTEST_CASE=case22 -GREAD_ORDER=2 -GREAD_NR=32 
+# Start time: 23:17:50 on Apr 16,2024
 # ** Warning: (vsim-3015) ../lab01_testbench-interface/top.sv(38): [PCDPC] - Port size (64) does not match connection size (32) for port 'rezultat'. The port definition is at: ../lab_dut/instr_register.sv(19).
 #    Time: 0 ns  Iteration: 0  Instance: /top/dut File: ../lab_dut/instr_register.sv
 # 
@@ -1067,5 +1067,5 @@
 # 
 # ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(87)
 #    Time: 876 ns  Iteration: 1  Instance: /top/test
-# End time: 23:17:16 on Apr 16,2024, Elapsed time: 0:00:01
+# End time: 23:17:50 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1

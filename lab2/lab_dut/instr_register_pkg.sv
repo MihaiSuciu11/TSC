@@ -14,7 +14,8 @@ package instr_register_pkg;   //se declara pagkage
     SUB,
     MULT,
     DIV,
-    MOD
+    MOD,
+    POW
   } opcode_t;
 //operatii matematice ale dut-ului(un fel de calculator)
   typedef logic signed [31:0] operand_t; 

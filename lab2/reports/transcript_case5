@@ -1,6 +1,6 @@
 # 1
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 08:52:04 on Apr 10,2024
+# Start time: 23:17:19 on Apr 16,2024
 # vlog -sv -timescale 1ps/1ps -work work -f sources.txt 
 # -- Compiling package instr_register_pkg
 # -- Compiling module instr_register
@@ -10,10 +10,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 08:52:05 on Apr 10,2024, Elapsed time: 0:00:01
+# End time: 23:17:19 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GWRITE_ORDER=2 -GWRITE_NR=50 -GSEED_VAL=445398 -GTEST_CASE=case5 -GREAD_ORDER=2 -GREAD_NR=32 
-# Start time: 08:52:05 on Apr 10,2024
+# Start time: 23:17:19 on Apr 16,2024
 # ** Warning: (vsim-3015) ../lab01_testbench-interface/top.sv(38): [PCDPC] - Port size (64) does not match connection size (32) for port 'rezultat'. The port definition is at: ../lab_dut/instr_register.sv(19).
 #    Time: 0 ns  Iteration: 0  Instance: /top/dut File: ../lab_dut/instr_register.sv
 # 
@@ -738,26 +738,26 @@
 #   operand_a = -10
 #   operand_b = 5
 # 
-#   rezultat = 0
+#   rezultat = 6
 # 
 # Fail counter: 0
 # 
-# Valoarea citita este corecta.
-# Valoare asteptata: 0
-# Valoare citita: 0
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: 6
+# Valoare primita: 0
 # 
 # Read from register location 28: 
 #   opcode = 7 (MOD)
 #   operand_a = 5
 #   operand_b = 4
 # 
-#   rezultat = 1
+#   rezultat = 3
 # 
-# Fail counter: 0
+# Fail counter: 1
 # 
-# Valoarea citita este corecta.
-# Valoare asteptata: 1
-# Valoare citita: 1
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: 3
+# Valoare primita: 1
 # 
 # Read from register location 6: 
 #   opcode = 4 (SUB)
@@ -766,7 +766,7 @@
 # 
 #   rezultat = 3
 # 
-# Fail counter: 0
+# Fail counter: 2
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 3
@@ -779,7 +779,7 @@
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 2
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
@@ -792,7 +792,7 @@
 # 
 #   rezultat = 72
 # 
-# Fail counter: 0
+# Fail counter: 2
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 72
@@ -805,7 +805,7 @@
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 2
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
@@ -816,13 +816,13 @@
 #   operand_a = -12
 #   operand_b = 0
 # 
-#   rezultat = x
+#   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 2
 # 
-# Valoarea citita este corecta.
-# Valoare asteptata: x
-# Valoare citita: x
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: 0
+# Valoare primita: x
 # 
 # Read from register location 0: 
 #   opcode = 5 (MULT)
@@ -831,7 +831,7 @@
 # 
 #   rezultat = 18
 # 
-# Fail counter: 0
+# Fail counter: 3
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 18
@@ -844,7 +844,7 @@
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 3
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
@@ -857,7 +857,7 @@
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 3
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
@@ -868,13 +868,13 @@
 #   operand_a = 5
 #   operand_b = 4
 # 
-#   rezultat = 1
+#   rezultat = 3
 # 
-# Fail counter: 0
+# Fail counter: 3
 # 
-# Valoarea citita este corecta.
-# Valoare asteptata: 1
-# Valoare citita: 1
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: 3
+# Valoare primita: 1
 # 
 # Read from register location 14: 
 #   opcode = 0 (ZERO)
@@ -883,7 +883,7 @@
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 4
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
@@ -896,7 +896,7 @@
 # 
 #   rezultat = 6
 # 
-# Fail counter: 0
+# Fail counter: 4
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 6
@@ -909,7 +909,7 @@
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 4
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
@@ -922,7 +922,7 @@
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 4
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
@@ -935,7 +935,7 @@
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 4
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
@@ -946,13 +946,13 @@
 #   operand_a = 7
 #   operand_b = 3
 # 
-#   rezultat = 2
+#   rezultat = -5
 # 
-# Fail counter: 0
+# Fail counter: 4
 # 
-# Valoarea citita este corecta.
-# Valoare asteptata: 2
-# Valoare citita: 2
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: -5
+# Valoare primita: 2
 # 
 # Read from register location 13: 
 #   opcode = 5 (MULT)
@@ -961,7 +961,7 @@
 # 
 #   rezultat = 78
 # 
-# Fail counter: 0
+# Fail counter: 5
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 78
@@ -974,7 +974,7 @@
 # 
 #   rezultat = 72
 # 
-# Fail counter: 0
+# Fail counter: 5
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 72
@@ -987,7 +987,7 @@
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 5
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
@@ -1000,7 +1000,7 @@
 # 
 #   rezultat = 3
 # 
-# Fail counter: 0
+# Fail counter: 5
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 3
@@ -1013,7 +1013,7 @@
 # 
 #   rezultat = 12
 # 
-# Fail counter: 0
+# Fail counter: 5
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 12
@@ -1024,13 +1024,13 @@
 #   operand_a = -12
 #   operand_b = 0
 # 
-#   rezultat = x
+#   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 5
 # 
-# Valoarea citita este corecta.
-# Valoare asteptata: x
-# Valoare citita: x
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: 0
+# Valoare primita: x
 # 
 # Read from register location 22: 
 #   opcode = 1 (PASSA)
@@ -1039,7 +1039,7 @@
 # 
 #   rezultat = -7
 # 
-# Fail counter: 0
+# Fail counter: 6
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: -7
@@ -1052,7 +1052,7 @@
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 6
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
@@ -1067,5 +1067,5 @@
 # 
 # ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(87)
 #    Time: 876 ns  Iteration: 1  Instance: /top/test
-# End time: 08:52:05 on Apr 10,2024, Elapsed time: 0:00:00
+# End time: 23:17:19 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1

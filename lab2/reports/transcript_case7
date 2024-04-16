@@ -1,6 +1,6 @@
 # 1
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 08:52:09 on Apr 10,2024
+# Start time: 23:17:21 on Apr 16,2024
 # vlog -sv -timescale 1ps/1ps -work work -f sources.txt 
 # -- Compiling package instr_register_pkg
 # -- Compiling module instr_register
@@ -10,10 +10,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 08:52:09 on Apr 10,2024, Elapsed time: 0:00:00
+# End time: 23:17:21 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GWRITE_ORDER=2 -GWRITE_NR=50 -GSEED_VAL=32172 -GTEST_CASE=case7 -GREAD_ORDER=2 -GREAD_NR=32 
-# Start time: 08:52:09 on Apr 10,2024
+# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GWRITE_ORDER=2 -GWRITE_NR=50 -GSEED_VAL=32672 -GTEST_CASE=case7 -GREAD_ORDER=2 -GREAD_NR=32 
+# Start time: 23:17:21 on Apr 16,2024
 # ** Warning: (vsim-3015) ../lab01_testbench-interface/top.sv(38): [PCDPC] - Port size (64) does not match connection size (32) for port 'rezultat'. The port definition is at: ../lab_dut/instr_register.sv(19).
 #    Time: 0 ns  Iteration: 0  Instance: /top/dut File: ../lab_dut/instr_register.sv
 # 
@@ -27,638 +27,625 @@
 # Reseting the instruction register...
 # 
 # Writing values to register stack...
-# At write pointer = 9:, timp 36: 
+# At write pointer = 15:, timp 36: 
+#   opcode = 4 
+#   operand_a = 13
+#   operand_b = 3
+# 
+# Writing to register location 15: 
+#   opcode = 4 (SUB)
+#   operand_a = 13
+#   operand_b = 3
+# 
+#   rezultat = 0
+# 
+# At write pointer = 2:, timp 46: 
 #   opcode = 5 
-#   operand_a = 8
-#   operand_b = 10
+#   operand_a = 3
+#   operand_b = 12
 # 
-# Writing to register location 9: 
+# Writing to register location 2: 
 #   opcode = 5 (MULT)
-#   operand_a = 8
-#   operand_b = 10
-# 
-#   rezultat = 0
-# 
-# At write pointer = 11:, timp 46: 
-#   opcode = 0 
-#   operand_a = -6
-#   operand_b = 5
-# 
-# Writing to register location 11: 
-#   opcode = 0 (ZERO)
-#   operand_a = -6
-#   operand_b = 5
-# 
-#   rezultat = 0
-# 
-# At write pointer = 1:, timp 56: 
-#   opcode = 4 
-#   operand_a = -11
-#   operand_b = 8
-# 
-# Writing to register location 1: 
-#   opcode = 4 (SUB)
-#   operand_a = -11
-#   operand_b = 8
-# 
-#   rezultat = 0
-# 
-# At write pointer = 1:, timp 66: 
-#   opcode = 7 
-#   operand_a = -8
-#   operand_b = 4
-# 
-# Writing to register location 1: 
-#   opcode = 7 (MOD)
-#   operand_a = -8
-#   operand_b = 4
-# 
-#   rezultat = 0
-# 
-# At write pointer = 28:, timp 76: 
-#   opcode = 4 
-#   operand_a = -12
-#   operand_b = 7
-# 
-# Writing to register location 28: 
-#   opcode = 4 (SUB)
-#   operand_a = -12
-#   operand_b = 7
-# 
-#   rezultat = 0
-# 
-# At write pointer = 9:, timp 86: 
-#   opcode = 2 
-#   operand_a = -9
-#   operand_b = 12
-# 
-# Writing to register location 9: 
-#   opcode = 2 (PASSB)
-#   operand_a = -9
+#   operand_a = 3
 #   operand_b = 12
 # 
 #   rezultat = 0
 # 
-# At write pointer = 31:, timp 96: 
-#   opcode = 1 
-#   operand_a = 12
-#   operand_b = 10
-# 
-# Writing to register location 31: 
-#   opcode = 1 (PASSA)
-#   operand_a = 12
-#   operand_b = 10
-# 
-#   rezultat = 0
-# 
-# At write pointer = 19:, timp 106: 
-#   opcode = 4 
-#   operand_a = -6
-#   operand_b = 9
-# 
-# Writing to register location 19: 
-#   opcode = 4 (SUB)
-#   operand_a = -6
-#   operand_b = 9
-# 
-#   rezultat = 12
-# 
-# At write pointer = 3:, timp 116: 
+# At write pointer = 16:, timp 56: 
 #   opcode = 3 
-#   operand_a = -7
-#   operand_b = 4
+#   operand_a = -4
+#   operand_b = 13
 # 
-# Writing to register location 3: 
+# Writing to register location 16: 
 #   opcode = 3 (ADD)
-#   operand_a = -7
-#   operand_b = 4
+#   operand_a = -4
+#   operand_b = 13
 # 
-#   rezultat = 12
+#   rezultat = 0
 # 
-# At write pointer = 27:, timp 126: 
+# At write pointer = 13:, timp 66: 
 #   opcode = 6 
-#   operand_a = 4
+#   operand_a = 13
 #   operand_b = 11
-# 
-# Writing to register location 27: 
-#   opcode = 6 (DIV)
-#   operand_a = 4
-#   operand_b = 11
-# 
-#   rezultat = 12
-# 
-# At write pointer = 10:, timp 136: 
-#   opcode = 1 
-#   operand_a = 11
-#   operand_b = 14
-# 
-# Writing to register location 10: 
-#   opcode = 1 (PASSA)
-#   operand_a = 11
-#   operand_b = 14
-# 
-#   rezultat = 12
-# 
-# At write pointer = 29:, timp 146: 
-#   opcode = 5 
-#   operand_a = -2
-#   operand_b = 1
-# 
-# Writing to register location 29: 
-#   opcode = 5 (MULT)
-#   operand_a = -2
-#   operand_b = 1
-# 
-#   rezultat = 12
-# 
-# At write pointer = 13:, timp 156: 
-#   opcode = 6 
-#   operand_a = -15
-#   operand_b = 5
 # 
 # Writing to register location 13: 
 #   opcode = 6 (DIV)
-#   operand_a = -15
-#   operand_b = 5
+#   operand_a = 13
+#   operand_b = 11
 # 
-#   rezultat = 12
+#   rezultat = 0
 # 
-# At write pointer = 23:, timp 166: 
+# At write pointer = 29:, timp 76: 
+#   opcode = 0 
+#   operand_a = 11
+#   operand_b = 14
+# 
+# Writing to register location 29: 
+#   opcode = 0 (ZERO)
+#   operand_a = 11
+#   operand_b = 14
+# 
+#   rezultat = 0
+# 
+# At write pointer = 29:, timp 86: 
+#   opcode = 1 
+#   operand_a = 14
+#   operand_b = 8
+# 
+# Writing to register location 29: 
+#   opcode = 1 (PASSA)
+#   operand_a = 14
+#   operand_b = 8
+# 
+#   rezultat = 0
+# 
+# At write pointer = 6:, timp 96: 
+#   opcode = 1 
+#   operand_a = -8
+#   operand_b = 9
+# 
+# Writing to register location 6: 
+#   opcode = 1 (PASSA)
+#   operand_a = -8
+#   operand_b = 9
+# 
+#   rezultat = 0
+# 
+# At write pointer = 26:, timp 106: 
+#   opcode = 3 
+#   operand_a = 9
+#   operand_b = 9
+# 
+# Writing to register location 26: 
+#   opcode = 3 (ADD)
+#   operand_a = 9
+#   operand_b = 9
+# 
+#   rezultat = 0
+# 
+# At write pointer = 29:, timp 116: 
+#   opcode = 0 
+#   operand_a = -7
+#   operand_b = 11
+# 
+# Writing to register location 29: 
+#   opcode = 0 (ZERO)
+#   operand_a = -7
+#   operand_b = 11
+# 
+#   rezultat = 0
+# 
+# At write pointer = 20:, timp 126: 
+#   opcode = 7 
+#   operand_a = 11
+#   operand_b = 0
+# 
+# Writing to register location 20: 
+#   opcode = 7 (MOD)
+#   operand_a = 11
+#   operand_b = 0
+# 
+#   rezultat = 0
+# 
+# At write pointer = 2:, timp 136: 
+#   opcode = 1 
+#   operand_a = 0
+#   operand_b = 7
+# 
+# Writing to register location 2: 
+#   opcode = 1 (PASSA)
+#   operand_a = 0
+#   operand_b = 7
+# 
+#   rezultat = 0
+# 
+# At write pointer = 22:, timp 146: 
 #   opcode = 2 
-#   operand_a = 5
-#   operand_b = 6
+#   operand_a = -9
+#   operand_b = 9
 # 
-# Writing to register location 23: 
+# Writing to register location 22: 
 #   opcode = 2 (PASSB)
-#   operand_a = 5
-#   operand_b = 6
+#   operand_a = -9
+#   operand_b = 9
 # 
-#   rezultat = 12
+#   rezultat = 0
+# 
+# At write pointer = 18:, timp 156: 
+#   opcode = 7 
+#   operand_a = -7
+#   operand_b = 2
+# 
+# Writing to register location 18: 
+#   opcode = 7 (MOD)
+#   operand_a = -7
+#   operand_b = 2
+# 
+#   rezultat = 0
+# 
+# At write pointer = 11:, timp 166: 
+#   opcode = 2 
+#   operand_a = 2
+#   operand_b = 15
+# 
+# Writing to register location 11: 
+#   opcode = 2 (PASSB)
+#   operand_a = 2
+#   operand_b = 15
+# 
+#   rezultat = 0
 # 
 # At write pointer = 5:, timp 176: 
 #   opcode = 7 
-#   operand_a = -10
-#   operand_b = 10
+#   operand_a = 15
+#   operand_b = 2
 # 
 # Writing to register location 5: 
 #   opcode = 7 (MOD)
-#   operand_a = -10
-#   operand_b = 10
-# 
-#   rezultat = 12
-# 
-# At write pointer = 16:, timp 186: 
-#   opcode = 6 
-#   operand_a = 10
-#   operand_b = 7
-# 
-# Writing to register location 16: 
-#   opcode = 6 (DIV)
-#   operand_a = 10
-#   operand_b = 7
-# 
-#   rezultat = 12
-# 
-# At write pointer = 17:, timp 196: 
-#   opcode = 6 
-#   operand_a = -9
-#   operand_b = 6
-# 
-# Writing to register location 17: 
-#   opcode = 6 (DIV)
-#   operand_a = -9
-#   operand_b = 6
-# 
-#   rezultat = 12
-# 
-# At write pointer = 4:, timp 206: 
-#   opcode = 5 
-#   operand_a = 6
-#   operand_b = 14
-# 
-# Writing to register location 4: 
-#   opcode = 5 (MULT)
-#   operand_a = 6
-#   operand_b = 14
-# 
-#   rezultat = 12
-# 
-# At write pointer = 16:, timp 216: 
-#   opcode = 5 
-#   operand_a = -2
-#   operand_b = 13
-# 
-# Writing to register location 16: 
-#   opcode = 5 (MULT)
-#   operand_a = -2
-#   operand_b = 13
-# 
-#   rezultat = 12
-# 
-# At write pointer = 31:, timp 226: 
-#   opcode = 0 
-#   operand_a = 13
-#   operand_b = 13
-# 
-# Writing to register location 31: 
-#   opcode = 0 (ZERO)
-#   operand_a = 13
-#   operand_b = 13
-# 
-#   rezultat = 12
-# 
-# At write pointer = 7:, timp 236: 
-#   opcode = 6 
-#   operand_a = -3
-#   operand_b = 0
-# 
-# Writing to register location 7: 
-#   opcode = 6 (DIV)
-#   operand_a = -3
-#   operand_b = 0
-# 
-#   rezultat = 0
-# 
-# At write pointer = 16:, timp 246: 
-#   opcode = 4 
-#   operand_a = 0
-#   operand_b = 14
-# 
-# Writing to register location 16: 
-#   opcode = 4 (SUB)
-#   operand_a = 0
-#   operand_b = 14
-# 
-#   rezultat = 0
-# 
-# At write pointer = 3:, timp 256: 
-#   opcode = 3 
-#   operand_a = 14
-#   operand_b = 12
-# 
-# Writing to register location 3: 
-#   opcode = 3 (ADD)
-#   operand_a = 14
-#   operand_b = 12
-# 
-#   rezultat = 0
-# 
-# At write pointer = 14:, timp 266: 
-#   opcode = 7 
-#   operand_a = -4
-#   operand_b = 3
-# 
-# Writing to register location 14: 
-#   opcode = 7 (MOD)
-#   operand_a = -4
-#   operand_b = 3
-# 
-#   rezultat = 0
-# 
-# At write pointer = 11:, timp 276: 
-#   opcode = 4 
-#   operand_a = -13
-#   operand_b = 15
-# 
-# Writing to register location 11: 
-#   opcode = 4 (SUB)
-#   operand_a = -13
-#   operand_b = 15
-# 
-#   rezultat = 0
-# 
-# At write pointer = 22:, timp 286: 
-#   opcode = 4 
 #   operand_a = 15
-#   operand_b = 12
-# 
-# Writing to register location 22: 
-#   opcode = 4 (SUB)
-#   operand_a = 15
-#   operand_b = 12
+#   operand_b = 2
 # 
 #   rezultat = 0
 # 
-# At write pointer = 24:, timp 296: 
-#   opcode = 6 
-#   operand_a = -4
-#   operand_b = 12
-# 
-# Writing to register location 24: 
-#   opcode = 6 (DIV)
-#   operand_a = -4
-#   operand_b = 12
-# 
-#   rezultat = 0
-# 
-# At write pointer = 10:, timp 306: 
-#   opcode = 0 
-#   operand_a = 12
-#   operand_b = 6
-# 
-# Writing to register location 10: 
-#   opcode = 0 (ZERO)
-#   operand_a = 12
-#   operand_b = 6
-# 
-#   rezultat = 0
-# 
-# At write pointer = 2:, timp 316: 
-#   opcode = 3 
-#   operand_a = 6
-#   operand_b = 0
-# 
-# Writing to register location 2: 
-#   opcode = 3 (ADD)
-#   operand_a = 6
-#   operand_b = 0
-# 
-#   rezultat = 0
-# 
-# At write pointer = 1:, timp 326: 
-#   opcode = 4 
-#   operand_a = 0
-#   operand_b = 3
-# 
-# Writing to register location 1: 
-#   opcode = 4 (SUB)
-#   operand_a = 0
-#   operand_b = 3
-# 
-#   rezultat = 0
-# 
-# At write pointer = 21:, timp 336: 
-#   opcode = 4 
-#   operand_a = 3
-#   operand_b = 4
-# 
-# Writing to register location 21: 
-#   opcode = 4 (SUB)
-#   operand_a = 3
-#   operand_b = 4
-# 
-#   rezultat = 0
-# 
-# At write pointer = 13:, timp 346: 
-#   opcode = 6 
-#   operand_a = 4
-#   operand_b = 12
-# 
-# Writing to register location 13: 
-#   opcode = 6 (DIV)
-#   operand_a = 4
-#   operand_b = 12
-# 
-#   rezultat = 0
-# 
-# At write pointer = 14:, timp 356: 
-#   opcode = 7 
-#   operand_a = -4
-#   operand_b = 14
-# 
-# Writing to register location 14: 
-#   opcode = 7 (MOD)
-#   operand_a = -4
-#   operand_b = 14
-# 
-#   rezultat = 0
-# 
-# At write pointer = 8:, timp 366: 
+# At write pointer = 14:, timp 186: 
 #   opcode = 1 
-#   operand_a = 14
+#   operand_a = -14
 #   operand_b = 15
 # 
-# Writing to register location 8: 
+# Writing to register location 14: 
 #   opcode = 1 (PASSA)
-#   operand_a = 14
+#   operand_a = -14
 #   operand_b = 15
 # 
 #   rezultat = 0
 # 
-# At write pointer = 0:, timp 376: 
-#   opcode = 4 
-#   operand_a = 15
+# At write pointer = 0:, timp 196: 
+#   opcode = 3 
+#   operand_a = -1
 #   operand_b = 9
 # 
 # Writing to register location 0: 
-#   opcode = 4 (SUB)
-#   operand_a = 15
+#   opcode = 3 (ADD)
+#   operand_a = -1
 #   operand_b = 9
 # 
 #   rezultat = 0
 # 
-# At write pointer = 26:, timp 386: 
-#   opcode = 2 
-#   operand_a = -7
-#   operand_b = 12
-# 
-# Writing to register location 26: 
-#   opcode = 2 (PASSB)
-#   operand_a = -7
-#   operand_b = 12
-# 
-#   rezultat = 0
-# 
-# At write pointer = 6:, timp 396: 
-#   opcode = 5 
-#   operand_a = 12
-#   operand_b = 2
-# 
-# Writing to register location 6: 
-#   opcode = 5 (MULT)
-#   operand_a = 12
-#   operand_b = 2
-# 
-#   rezultat = 0
-# 
-# At write pointer = 18:, timp 406: 
-#   opcode = 5 
-#   operand_a = -14
-#   operand_b = 13
-# 
-# Writing to register location 18: 
-#   opcode = 5 (MULT)
-#   operand_a = -14
-#   operand_b = 13
-# 
-#   rezultat = 0
-# 
-# At write pointer = 7:, timp 416: 
-#   opcode = 0 
-#   operand_a = 13
-#   operand_b = 5
-# 
-# Writing to register location 7: 
-#   opcode = 0 (ZERO)
-#   operand_a = 13
-#   operand_b = 5
-# 
-#   rezultat = 0
-# 
-# At write pointer = 4:, timp 426: 
+# At write pointer = 1:, timp 206: 
 #   opcode = 3 
-#   operand_a = 5
-#   operand_b = 0
+#   operand_a = -7
+#   operand_b = 3
 # 
-# Writing to register location 4: 
+# Writing to register location 1: 
 #   opcode = 3 (ADD)
-#   operand_a = 5
-#   operand_b = 0
+#   operand_a = -7
+#   operand_b = 3
 # 
 #   rezultat = 0
 # 
-# At write pointer = 25:, timp 436: 
+# At write pointer = 8:, timp 216: 
 #   opcode = 0 
-#   operand_a = 0
+#   operand_a = -13
 #   operand_b = 11
 # 
-# Writing to register location 25: 
+# Writing to register location 8: 
 #   opcode = 0 (ZERO)
-#   operand_a = 0
+#   operand_a = -13
 #   operand_b = 11
 # 
 #   rezultat = 0
 # 
-# At write pointer = 25:, timp 446: 
-#   opcode = 4 
+# At write pointer = 30:, timp 226: 
+#   opcode = 5 
 #   operand_a = 11
-#   operand_b = 0
+#   operand_b = 8
 # 
-# Writing to register location 25: 
-#   opcode = 4 (SUB)
+# Writing to register location 30: 
+#   opcode = 5 (MULT)
 #   operand_a = 11
-#   operand_b = 0
+#   operand_b = 8
 # 
 #   rezultat = 0
 # 
-# At write pointer = 10:, timp 456: 
+# At write pointer = 28:, timp 236: 
+#   opcode = 4 
+#   operand_a = -8
+#   operand_b = 13
+# 
+# Writing to register location 28: 
+#   opcode = 4 (SUB)
+#   operand_a = -8
+#   operand_b = 13
+# 
+#   rezultat = 0
+# 
+# At write pointer = 10:, timp 246: 
 #   opcode = 3 
-#   operand_a = 0
+#   operand_a = -3
 #   operand_b = 4
 # 
 # Writing to register location 10: 
 #   opcode = 3 (ADD)
-#   operand_a = 0
+#   operand_a = -3
 #   operand_b = 4
 # 
 #   rezultat = 0
 # 
-# At write pointer = 17:, timp 466: 
-#   opcode = 3 
-#   operand_a = 4
-#   operand_b = 3
+# At write pointer = 19:, timp 256: 
+#   opcode = 2 
+#   operand_a = -12
+#   operand_b = 11
 # 
-# Writing to register location 17: 
-#   opcode = 3 (ADD)
-#   operand_a = 4
-#   operand_b = 3
+# Writing to register location 19: 
+#   opcode = 2 (PASSB)
+#   operand_a = -12
+#   operand_b = 11
 # 
 #   rezultat = 0
 # 
-# At write pointer = 27:, timp 476: 
-#   opcode = 5 
-#   operand_a = 3
-#   operand_b = 3
+# At write pointer = 12:, timp 266: 
+#   opcode = 0 
+#   operand_a = -5
+#   operand_b = 10
+# 
+# Writing to register location 12: 
+#   opcode = 0 (ZERO)
+#   operand_a = -5
+#   operand_b = 10
+# 
+#   rezultat = 0
+# 
+# At write pointer = 7:, timp 276: 
+#   opcode = 6 
+#   operand_a = -6
+#   operand_b = 8
+# 
+# Writing to register location 7: 
+#   opcode = 6 (DIV)
+#   operand_a = -6
+#   operand_b = 8
+# 
+#   rezultat = 0
+# 
+# At write pointer = 27:, timp 286: 
+#   opcode = 7 
+#   operand_a = 8
+#   operand_b = 14
 # 
 # Writing to register location 27: 
-#   opcode = 5 (MULT)
-#   operand_a = 3
-#   operand_b = 3
+#   opcode = 7 (MOD)
+#   operand_a = 8
+#   operand_b = 14
 # 
 #   rezultat = 0
 # 
-# At write pointer = 22:, timp 486: 
+# At write pointer = 2:, timp 296: 
+#   opcode = 4 
+#   operand_a = -2
+#   operand_b = 7
+# 
+# Writing to register location 2: 
+#   opcode = 4 (SUB)
+#   operand_a = -2
+#   operand_b = 7
+# 
+#   rezultat = 0
+# 
+# At write pointer = 6:, timp 306: 
 #   opcode = 6 
-#   operand_a = -13
+#   operand_a = 7
+#   operand_b = 4
+# 
+# Writing to register location 6: 
+#   opcode = 6 (DIV)
+#   operand_a = 7
+#   operand_b = 4
+# 
+#   rezultat = 0
+# 
+# At write pointer = 21:, timp 316: 
+#   opcode = 1 
+#   operand_a = -12
+#   operand_b = 6
+# 
+# Writing to register location 21: 
+#   opcode = 1 (PASSA)
+#   operand_a = -12
+#   operand_b = 6
+# 
+#   rezultat = 0
+# 
+# At write pointer = 22:, timp 326: 
+#   opcode = 5 
+#   operand_a = -10
+#   operand_b = 1
+# 
+# Writing to register location 22: 
+#   opcode = 5 (MULT)
+#   operand_a = -10
+#   operand_b = 1
+# 
+#   rezultat = 0
+# 
+# At write pointer = 29:, timp 336: 
+#   opcode = 1 
+#   operand_a = -15
+#   operand_b = 5
+# 
+# Writing to register location 29: 
+#   opcode = 1 (PASSA)
+#   operand_a = -15
+#   operand_b = 5
+# 
+#   rezultat = 0
+# 
+# At write pointer = 11:, timp 346: 
+#   opcode = 2 
+#   operand_a = -11
+#   operand_b = 1
+# 
+# Writing to register location 11: 
+#   opcode = 2 (PASSB)
+#   operand_a = -11
+#   operand_b = 1
+# 
+#   rezultat = 0
+# 
+# At write pointer = 20:, timp 356: 
+#   opcode = 1 
+#   operand_a = 1
+#   operand_b = 2
+# 
+# Writing to register location 20: 
+#   opcode = 1 (PASSA)
+#   operand_a = 1
+#   operand_b = 2
+# 
+#   rezultat = 0
+# 
+# At write pointer = 26:, timp 366: 
+#   opcode = 5 
+#   operand_a = -14
+#   operand_b = 9
+# 
+# Writing to register location 26: 
+#   opcode = 5 (MULT)
+#   operand_a = -14
+#   operand_b = 9
+# 
+#   rezultat = 0
+# 
+# At write pointer = 22:, timp 376: 
+#   opcode = 1 
+#   operand_a = 9
 #   operand_b = 5
 # 
 # Writing to register location 22: 
-#   opcode = 6 (DIV)
-#   operand_a = -13
+#   opcode = 1 (PASSA)
+#   operand_a = 9
 #   operand_b = 5
 # 
 #   rezultat = 0
 # 
-# At write pointer = 6:, timp 496: 
-#   opcode = 3 
-#   operand_a = 5
-#   operand_b = 14
+# At write pointer = 6:, timp 386: 
+#   opcode = 0 
+#   operand_a = -11
+#   operand_b = 1
 # 
 # Writing to register location 6: 
-#   opcode = 3 (ADD)
-#   operand_a = 5
+#   opcode = 0 (ZERO)
+#   operand_a = -11
+#   operand_b = 1
+# 
+#   rezultat = 0
+# 
+# At write pointer = 8:, timp 396: 
+#   opcode = 1 
+#   operand_a = -15
+#   operand_b = 8
+# 
+# Writing to register location 8: 
+#   opcode = 1 (PASSA)
+#   operand_a = -15
+#   operand_b = 8
+# 
+#   rezultat = 0
+# 
+# At write pointer = 15:, timp 406: 
+#   opcode = 4 
+#   operand_a = -8
+#   operand_b = 1
+# 
+# Writing to register location 15: 
+#   opcode = 4 (SUB)
+#   operand_a = -8
+#   operand_b = 1
+# 
+#   rezultat = 0
+# 
+# At write pointer = 30:, timp 416: 
+#   opcode = 4 
+#   operand_a = -15
+#   operand_b = 4
+# 
+# Writing to register location 30: 
+#   opcode = 4 (SUB)
+#   operand_a = -15
+#   operand_b = 4
+# 
+#   rezultat = 0
+# 
+# At write pointer = 30:, timp 426: 
+#   opcode = 6 
+#   operand_a = 4
+#   operand_b = 4
+# 
+# Writing to register location 30: 
+#   opcode = 6 (DIV)
+#   operand_a = 4
+#   operand_b = 4
+# 
+#   rezultat = 0
+# 
+# At write pointer = 15:, timp 436: 
+#   opcode = 2 
+#   operand_a = -12
+#   operand_b = 14
+# 
+# Writing to register location 15: 
+#   opcode = 2 (PASSB)
+#   operand_a = -12
 #   operand_b = 14
 # 
 #   rezultat = 0
 # 
-# At write pointer = 12:, timp 506: 
-#   opcode = 3 
-#   operand_a = -2
-#   operand_b = 11
+# At write pointer = 23:, timp 446: 
+#   opcode = 2 
+#   operand_a = 14
+#   operand_b = 10
 # 
-# Writing to register location 12: 
-#   opcode = 3 (ADD)
-#   operand_a = -2
-#   operand_b = 11
+# Writing to register location 23: 
+#   opcode = 2 (PASSB)
+#   operand_a = 14
+#   operand_b = 10
+# 
+#   rezultat = 0
+# 
+# At write pointer = 1:, timp 456: 
+#   opcode = 1 
+#   operand_a = -6
+#   operand_b = 10
+# 
+# Writing to register location 1: 
+#   opcode = 1 (PASSA)
+#   operand_a = -6
+#   operand_b = 10
+# 
+#   rezultat = 0
+# 
+# At write pointer = 9:, timp 466: 
+#   opcode = 2 
+#   operand_a = 10
+#   operand_b = 9
+# 
+# Writing to register location 9: 
+#   opcode = 2 (PASSB)
+#   operand_a = 10
+#   operand_b = 9
+# 
+#   rezultat = 0
+# 
+# At write pointer = 18:, timp 476: 
+#   opcode = 1 
+#   operand_a = 9
+#   operand_b = 2
+# 
+# Writing to register location 18: 
+#   opcode = 1 (PASSA)
+#   operand_a = 9
+#   operand_b = 2
+# 
+#   rezultat = 0
+# 
+# At write pointer = 28:, timp 486: 
+#   opcode = 1 
+#   operand_a = 2
+#   operand_b = 9
+# 
+# Writing to register location 28: 
+#   opcode = 1 (PASSA)
+#   operand_a = 2
+#   operand_b = 9
+# 
+#   rezultat = 0
+# 
+# At write pointer = 19:, timp 496: 
+#   opcode = 7 
+#   operand_a = 9
+#   operand_b = 1
+# 
+# Writing to register location 19: 
+#   opcode = 7 (MOD)
+#   operand_a = 9
+#   operand_b = 1
+# 
+#   rezultat = 0
+# 
+# At write pointer = 17:, timp 506: 
+#   opcode = 1 
+#   operand_a = -15
+#   operand_b = 15
+# 
+# Writing to register location 17: 
+#   opcode = 1 (PASSA)
+#   operand_a = -15
+#   operand_b = 15
 # 
 #   rezultat = 0
 # 
 # At write pointer = 17:, timp 516: 
-#   opcode = 3 
-#   operand_a = -5
-#   operand_b = 3
+#   opcode = 1 
+#   operand_a = -1
+#   operand_b = 9
 # 
 # Writing to register location 17: 
-#   opcode = 3 (ADD)
-#   operand_a = -5
-#   operand_b = 3
+#   opcode = 1 (PASSA)
+#   operand_a = -1
+#   operand_b = 9
 # 
 #   rezultat = 0
 # 
-# At write pointer = 1:, timp 526: 
-#   opcode = 1 
-#   operand_a = -13
-#   operand_b = 3
+# At write pointer = 2:, timp 526: 
+#   opcode = 2 
+#   operand_a = -7
+#   operand_b = 1
 # 
-# Writing to register location 1: 
-#   opcode = 1 (PASSA)
-#   operand_a = -13
-#   operand_b = 3
+# Writing to register location 2: 
+#   opcode = 2 (PASSB)
+#   operand_a = -7
+#   operand_b = 1
 # 
 #   rezultat = 0
 # 
 # 
 # Reading back the same register locations written...
-# Read from register location 13: 
-#   opcode = 6 (DIV)
-#   operand_a = 4
-#   operand_b = 12
+# Read from register location 17: 
+#   opcode = 1 (PASSA)
+#   operand_a = -1
+#   operand_b = 9
 # 
-#   rezultat = 0
+#   rezultat = -1
 # 
 # Fail counter: 0
 # 
 # Valoarea citita este corecta.
-# Valoare asteptata: 0
-# Valoare citita: 0
+# Valoare asteptata: -1
+# Valoare citita: -1
 # 
 # Read from register location 22: 
-#   opcode = 6 (DIV)
-#   operand_a = -13
+#   opcode = 1 (PASSA)
+#   operand_a = 9
 #   operand_b = 5
-# 
-#   rezultat = -2
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: -2
-# Valoare citita: -2
-# 
-# Read from register location 27: 
-#   opcode = 5 (MULT)
-#   operand_a = 3
-#   operand_b = 3
 # 
 #   rezultat = 9
 # 
@@ -668,217 +655,9 @@
 # Valoare asteptata: 9
 # Valoare citita: 9
 # 
-# Read from register location 6: 
-#   opcode = 3 (ADD)
-#   operand_a = 5
-#   operand_b = 14
-# 
-#   rezultat = 19
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 19
-# Valoare citita: 19
-# 
-# Read from register location 0: 
-#   opcode = 4 (SUB)
-#   operand_a = 15
-#   operand_b = 9
-# 
-#   rezultat = 6
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 6
-# Valoare citita: 6
-# 
-# Read from register location 24: 
-#   opcode = 6 (DIV)
-#   operand_a = -4
-#   operand_b = 12
-# 
-#   rezultat = 0
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 0
-# Valoare citita: 0
-# 
-# Read from register location 2: 
-#   opcode = 3 (ADD)
-#   operand_a = 6
-#   operand_b = 0
-# 
-#   rezultat = 6
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 6
-# Valoare citita: 6
-# 
-# Read from register location 24: 
-#   opcode = 6 (DIV)
-#   operand_a = -4
-#   operand_b = 12
-# 
-#   rezultat = 0
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 0
-# Valoare citita: 0
-# 
-# Read from register location 31: 
+# Read from register location 12: 
 #   opcode = 0 (ZERO)
-#   operand_a = 13
-#   operand_b = 13
-# 
-#   rezultat = 0
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 0
-# Valoare citita: 0
-# 
-# Read from register location 18: 
-#   opcode = 5 (MULT)
-#   operand_a = -14
-#   operand_b = 13
-# 
-#   rezultat = -182
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: -182
-# Valoare citita: -182
-# 
-# Read from register location 22: 
-#   opcode = 6 (DIV)
-#   operand_a = -13
-#   operand_b = 5
-# 
-#   rezultat = -2
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: -2
-# Valoare citita: -2
-# 
-# Read from register location 0: 
-#   opcode = 4 (SUB)
-#   operand_a = 15
-#   operand_b = 9
-# 
-#   rezultat = 6
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 6
-# Valoare citita: 6
-# 
-# Read from register location 28: 
-#   opcode = 4 (SUB)
-#   operand_a = -12
-#   operand_b = 7
-# 
-#   rezultat = -19
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: -19
-# Valoare citita: -19
-# 
-# Read from register location 30: 
-#   opcode = 0 (ZERO)
-#   operand_a = 0
-#   operand_b = 0
-# 
-#   rezultat = 0
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 0
-# Valoare citita: 0
-# 
-# Read from register location 17: 
-#   opcode = 3 (ADD)
 #   operand_a = -5
-#   operand_b = 3
-# 
-#   rezultat = -2
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: -2
-# Valoare citita: -2
-# 
-# Read from register location 22: 
-#   opcode = 6 (DIV)
-#   operand_a = -13
-#   operand_b = 5
-# 
-#   rezultat = -2
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: -2
-# Valoare citita: -2
-# 
-# Read from register location 23: 
-#   opcode = 2 (PASSB)
-#   operand_a = 5
-#   operand_b = 6
-# 
-#   rezultat = 6
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 6
-# Valoare citita: 6
-# 
-# Read from register location 29: 
-#   opcode = 5 (MULT)
-#   operand_a = -2
-#   operand_b = 1
-# 
-#   rezultat = -2
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: -2
-# Valoare citita: -2
-# 
-# Read from register location 3: 
-#   opcode = 3 (ADD)
-#   operand_a = 14
-#   operand_b = 12
-# 
-#   rezultat = 26
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 26
-# Valoare citita: 26
-# 
-# Read from register location 5: 
-#   opcode = 7 (MOD)
-#   operand_a = -10
 #   operand_b = 10
 # 
 #   rezultat = 0
@@ -889,75 +668,36 @@
 # Valoare asteptata: 0
 # Valoare citita: 0
 # 
-# Read from register location 11: 
-#   opcode = 4 (SUB)
-#   operand_a = -13
-#   operand_b = 15
-# 
-#   rezultat = -28
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: -28
-# Valoare citita: -28
-# 
-# Read from register location 18: 
+# Read from register location 26: 
 #   opcode = 5 (MULT)
 #   operand_a = -14
-#   operand_b = 13
+#   operand_b = 9
 # 
-#   rezultat = -182
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: -182
-# Valoare citita: -182
-# 
-# Read from register location 3: 
-#   opcode = 3 (ADD)
-#   operand_a = 14
-#   operand_b = 12
-# 
-#   rezultat = 26
+#   rezultat = -126
 # 
 # Fail counter: 0
 # 
 # Valoarea citita este corecta.
-# Valoare asteptata: 26
-# Valoare citita: 26
+# Valoare asteptata: -126
+# Valoare citita: -126
 # 
-# Read from register location 20: 
-#   opcode = 0 (ZERO)
-#   operand_a = 0
-#   operand_b = 0
+# Read from register location 8: 
+#   opcode = 1 (PASSA)
+#   operand_a = -15
+#   operand_b = 8
 # 
-#   rezultat = 0
-# 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 0
-# Valoare citita: 0
-# 
-# Read from register location 6: 
-#   opcode = 3 (ADD)
-#   operand_a = 5
-#   operand_b = 14
-# 
-#   rezultat = 19
+#   rezultat = -15
 # 
 # Fail counter: 0
 # 
 # Valoarea citita este corecta.
-# Valoare asteptata: 19
-# Valoare citita: 19
+# Valoare asteptata: -15
+# Valoare citita: -15
 # 
-# Read from register location 16: 
-#   opcode = 4 (SUB)
-#   operand_a = 0
-#   operand_b = 14
+# Read from register location 14: 
+#   opcode = 1 (PASSA)
+#   operand_a = -14
+#   operand_b = 15
 # 
 #   rezultat = -14
 # 
@@ -967,10 +707,23 @@
 # Valoare asteptata: -14
 # Valoare citita: -14
 # 
-# Read from register location 24: 
+# Read from register location 26: 
+#   opcode = 5 (MULT)
+#   operand_a = -14
+#   operand_b = 9
+# 
+#   rezultat = -126
+# 
+# Fail counter: 0
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: -126
+# Valoare citita: -126
+# 
+# Read from register location 7: 
 #   opcode = 6 (DIV)
-#   operand_a = -4
-#   operand_b = 12
+#   operand_a = -6
+#   operand_b = 8
 # 
 #   rezultat = 0
 # 
@@ -980,83 +733,330 @@
 # Valoare asteptata: 0
 # Valoare citita: 0
 # 
-# Read from register location 12: 
-#   opcode = 3 (ADD)
-#   operand_a = -2
+# Read from register location 13: 
+#   opcode = 6 (DIV)
+#   operand_a = 13
 #   operand_b = 11
 # 
 #   rezultat = 9
 # 
 # Fail counter: 0
 # 
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: 9
+# Valoare primita: 1
+# 
+# Read from register location 1: 
+#   opcode = 1 (PASSA)
+#   operand_a = -6
+#   operand_b = 10
+# 
+#   rezultat = -6
+# 
+# Fail counter: 1
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: -6
+# Valoare citita: -6
+# 
+# Read from register location 28: 
+#   opcode = 1 (PASSA)
+#   operand_a = 2
+#   operand_b = 9
+# 
+#   rezultat = 2
+# 
+# Fail counter: 1
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 2
+# Valoare citita: 2
+# 
+# Read from register location 30: 
+#   opcode = 6 (DIV)
+#   operand_a = 4
+#   operand_b = 4
+# 
+#   rezultat = -19
+# 
+# Fail counter: 1
+# 
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: -19
+# Valoare primita: 1
+# 
+# Read from register location 13: 
+#   opcode = 6 (DIV)
+#   operand_a = 13
+#   operand_b = 11
+# 
+#   rezultat = 9
+# 
+# Fail counter: 2
+# 
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: 9
+# Valoare primita: 1
+# 
+# Read from register location 10: 
+#   opcode = 3 (ADD)
+#   operand_a = -3
+#   operand_b = 4
+# 
+#   rezultat = 1
+# 
+# Fail counter: 3
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 1
+# Valoare citita: 1
+# 
+# Read from register location 30: 
+#   opcode = 6 (DIV)
+#   operand_a = 4
+#   operand_b = 4
+# 
+#   rezultat = -19
+# 
+# Fail counter: 3
+# 
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: -19
+# Valoare primita: 1
+# 
+# Read from register location 2: 
+#   opcode = 2 (PASSB)
+#   operand_a = -7
+#   operand_b = 1
+# 
+#   rezultat = 1
+# 
+# Fail counter: 4
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 1
+# Valoare citita: 1
+# 
+# Read from register location 8: 
+#   opcode = 1 (PASSA)
+#   operand_a = -15
+#   operand_b = 8
+# 
+#   rezultat = -15
+# 
+# Fail counter: 4
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: -15
+# Valoare citita: -15
+# 
+# Read from register location 14: 
+#   opcode = 1 (PASSA)
+#   operand_a = -14
+#   operand_b = 15
+# 
+#   rezultat = -14
+# 
+# Fail counter: 4
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: -14
+# Valoare citita: -14
+# 
+# Read from register location 28: 
+#   opcode = 1 (PASSA)
+#   operand_a = 2
+#   operand_b = 9
+# 
+#   rezultat = 2
+# 
+# Fail counter: 4
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 2
+# Valoare citita: 2
+# 
+# Read from register location 13: 
+#   opcode = 6 (DIV)
+#   operand_a = 13
+#   operand_b = 11
+# 
+#   rezultat = 9
+# 
+# Fail counter: 4
+# 
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: 9
+# Valoare primita: 1
+# 
+# Read from register location 30: 
+#   opcode = 6 (DIV)
+#   operand_a = 4
+#   operand_b = 4
+# 
+#   rezultat = -19
+# 
+# Fail counter: 5
+# 
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: -19
+# Valoare primita: 1
+# 
+# Read from register location 26: 
+#   opcode = 5 (MULT)
+#   operand_a = -14
+#   operand_b = 9
+# 
+#   rezultat = -126
+# 
+# Fail counter: 6
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: -126
+# Valoare citita: -126
+# 
+# Read from register location 27: 
+#   opcode = 7 (MOD)
+#   operand_a = 8
+#   operand_b = 14
+# 
+#   rezultat = 0
+# 
+# Fail counter: 6
+# 
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: 0
+# Valoare primita: 8
+# 
+# Read from register location 27: 
+#   opcode = 7 (MOD)
+#   operand_a = 8
+#   operand_b = 14
+# 
+#   rezultat = 0
+# 
+# Fail counter: 7
+# 
+# Valorile nu sunt aceleasi.
+# Valoare asteptata: 0
+# Valoare primita: 8
+# 
+# Read from register location 18: 
+#   opcode = 1 (PASSA)
+#   operand_a = 9
+#   operand_b = 2
+# 
+#   rezultat = 9
+# 
+# Fail counter: 8
+# 
 # Valoarea citita este corecta.
 # Valoare asteptata: 9
 # Valoare citita: 9
 # 
-# Read from register location 8: 
+# Read from register location 18: 
 #   opcode = 1 (PASSA)
-#   operand_a = 14
-#   operand_b = 15
+#   operand_a = 9
+#   operand_b = 2
 # 
-#   rezultat = 14
+#   rezultat = 9
 # 
-# Fail counter: 0
+# Fail counter: 8
 # 
 # Valoarea citita este corecta.
-# Valoare asteptata: 14
-# Valoare citita: 14
+# Valoare asteptata: 9
+# Valoare citita: 9
 # 
-# Read from register location 5: 
-#   opcode = 7 (MOD)
-#   operand_a = -10
-#   operand_b = 10
+# Read from register location 25: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
 # 
 #   rezultat = 0
 # 
-# Fail counter: 0
+# Fail counter: 8
 # 
 # Valoarea citita este corecta.
 # Valoare asteptata: 0
 # Valoare citita: 0
 # 
-# Read from register location 27: 
-#   opcode = 5 (MULT)
-#   operand_a = 3
-#   operand_b = 3
+# Read from register location 25: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
 # 
-#   rezultat = 9
+#   rezultat = 0
 # 
-# Fail counter: 0
-# 
-# Valoarea citita este corecta.
-# Valoare asteptata: 9
-# Valoare citita: 9
-# 
-# Read from register location 11: 
-#   opcode = 4 (SUB)
-#   operand_a = -13
-#   operand_b = 15
-# 
-#   rezultat = -28
-# 
-# Fail counter: 0
+# Fail counter: 8
 # 
 # Valoarea citita este corecta.
-# Valoare asteptata: -28
-# Valoare citita: -28
+# Valoare asteptata: 0
+# Valoare citita: 0
+# 
+# Read from register location 17: 
+#   opcode = 1 (PASSA)
+#   operand_a = -1
+#   operand_b = 9
+# 
+#   rezultat = -1
+# 
+# Fail counter: 8
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: -1
+# Valoare citita: -1
+# 
+# Read from register location 24: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   rezultat = 0
+# 
+# Fail counter: 8
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 0
+# Valoare citita: 0
 # 
 # Read from register location 10: 
 #   opcode = 3 (ADD)
-#   operand_a = 0
+#   operand_a = -3
 #   operand_b = 4
 # 
-#   rezultat = 4
+#   rezultat = 1
 # 
-# Fail counter: 0
+# Fail counter: 8
 # 
 # Valoarea citita este corecta.
-# Valoare asteptata: 4
-# Valoare citita: 4
+# Valoare asteptata: 1
+# Valoare citita: 1
+# 
+# Read from register location 12: 
+#   opcode = 0 (ZERO)
+#   operand_a = -5
+#   operand_b = 10
+# 
+#   rezultat = 0
+# 
+# Fail counter: 8
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 0
+# Valoare citita: 0
+# 
+# Read from register location 4: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   rezultat = 0
+# 
+# Fail counter: 8
+# 
+# Valoarea citita este corecta.
+# Valoare asteptata: 0
+# Valoare citita: 0
 # 
 # 
 # ***********************************************************
@@ -1067,5 +1067,5 @@
 # 
 # ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(87)
 #    Time: 876 ns  Iteration: 1  Instance: /top/test
-# End time: 08:52:09 on Apr 10,2024, Elapsed time: 0:00:00
+# End time: 23:17:21 on Apr 16,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1

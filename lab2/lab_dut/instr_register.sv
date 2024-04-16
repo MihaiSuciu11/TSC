@@ -37,8 +37,18 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
       ADD: rezultat = operand_a + operand_b;
       SUB: rezultat = operand_a - operand_b;
       MULT: rezultat = operand_a * operand_b;
-      DIV: rezultat = operand_a / operand_b;
-      MOD: rezultat = operand_a % operand_b;
+      DIV : if (operand_b === 0)
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b, 0};
+        else
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a / operand_b};
+      MOD : if (operand_b === 0) 
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b, 0};
+        else
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a % operand_b};
+      POW : if (operand_a === 0) 
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b, 0};
+        else
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a ** operand_b};
     endcase
       iw_reg[write_pointer] = '{opcode,operand_a,operand_b,rezultat};
     end
