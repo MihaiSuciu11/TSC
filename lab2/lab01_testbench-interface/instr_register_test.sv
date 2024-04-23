@@ -94,7 +94,7 @@ module instr_register_test
   
   operand_a = $random(seed)%16; // between -15 and 15. Algoritmul de randomize vine cu verilog-ul. Se iau valori intre 15 si -15 deoarece este signed
   operand_b = $unsigned($random)%16;  // between 0 and 15
-  opcode = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+  opcode = opcode_t'($unsigned($random)%9);  // between 0 and 7, cast to opcode_t type// se modifica in %9 pentru ca adaugam POW
   //cast converteste tipul de variabila. 
   //se face %8 deoarece sunt 8 operatii
 
@@ -141,6 +141,9 @@ module instr_register_test
   function void check_result;
 
   operand_d res;
+
+  res = 0;
+  
     case(iw_reg_test[read_pointer].opc)
         ZERO: res = 0;
         PASSA: res = iw_reg_test[read_pointer].op_a;
@@ -148,13 +151,18 @@ module instr_register_test
         ADD: res = iw_reg_test[read_pointer].op_a + iw_reg_test[read_pointer].op_b;
         SUB: res = iw_reg_test[read_pointer].op_a - iw_reg_test[read_pointer].op_b;
         MULT: res = iw_reg_test[read_pointer].op_a * iw_reg_test[read_pointer].op_b;
-        DIV:
-          if (iw_reg_test[read_pointer].op_b === 0) res = 0;
-          else res = iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b;
-        MOD: res = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
-        POW:
-          if (iw_reg_test[read_pointer].op_a === 0) res = 0;
-          else res = iw_reg_test[read_pointer].op_a ** iw_reg_test[read_pointer].op_b;
+        DIV : if (iw_reg_test[read_pointer].op_b === 0)
+          res = 0;
+        else
+          res = iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b;
+        MOD : if (iw_reg_test[read_pointer].op_b === 0) 
+          res = 0;
+        else
+          res = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
+        POW : if (iw_reg_test[read_pointer].op_a === 0) 
+          res = 0;
+        else
+          res = iw_reg_test[read_pointer].op_a ** iw_reg_test[read_pointer].op_b;
         default : res = 0;
     endcase
     if (res !== instruction_word.rezultat) begin

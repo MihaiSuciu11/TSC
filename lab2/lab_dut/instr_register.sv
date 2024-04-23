@@ -30,6 +30,7 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
         iw_reg[i] = '{opc:ZERO,default:0};  // reset to all zeros
     end
     else if (load_en) begin
+    rezultat = 0;
     case(opcode)
   	  ZERO: rezultat = 0;
       PASSA: rezultat = operand_a;
@@ -38,17 +39,17 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
       SUB: rezultat = operand_a - operand_b;
       MULT: rezultat = operand_a * operand_b;
       DIV : if (operand_b === 0)
-          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b, 0};
+          rezultat = 0;
         else
-          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a / operand_b};
+          rezultat = operand_a / operand_b;
       MOD : if (operand_b === 0) 
-          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b, 0};
+          rezultat = 0;
         else
-          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a % operand_b};
+          rezultat = operand_a % operand_b;
       POW : if (operand_a === 0) 
-          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b, 0};
+          rezultat = 0;
         else
-          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a ** operand_b};
+          rezultat = operand_a ** operand_b;
     endcase
       iw_reg[write_pointer] = '{opcode,operand_a,operand_b,rezultat};
     end

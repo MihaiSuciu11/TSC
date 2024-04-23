@@ -15,7 +15,7 @@ module top;
   // interconnecting signals
   logic          load_en;  //
   logic          reset_n;  //reset activ in 0
-  operand_t      rezultat;
+  operand_d      rezultat;
   opcode_t       opcode;
   operand_t      operand_a, operand_b;
   address_t      write_pointer, read_pointer;
